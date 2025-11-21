@@ -1,0 +1,30 @@
+---
+import Config from '@config';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+import logoImage from '@assets/logo.png';
+import ArrowDownImage from '@assets/arrow-down.svg';
+---
+<section id="home" class="bg-software h-dvh px-2 md:px-10 flex flex-col justify-center items-center">
+    <div class="flex flex-col gap-10 p-2 items-center md:flex-row md:p-6">
+        <img src={logoImage.src} alt="SnoringPony Logo" class="h-30 md:h-64 opacity-70 drop-shadow-xl drop-shadow-neutral-950/70"/>
+        <div class="flex flex-col gap-3 text-center drop-shadow-lg drop-shadow-neutral-950/70">
+            <h1 class="bold text-4xl md:text-7xl">SnoringPony</h1>
+            <p class="text-2xl mt-4 md:text-4xl">{t('hero.baseline')}</p>
+            <div class="hidden md:block h-[1px] mt-10 mx-auto w-1/3 bg-neutral-200/60"></div>
+            {Config.comingSoon && <p class="text-2xl text-neutral-300 mt-10">{t('hero.comingSoon')}</p>}
+        </div>
+    </div>
+    {!Config.comingSoon &&
+    <div @click.prevent="goNext()" class="absolute bottom-5 md:bottom-15 left-1/2 translate-x-[-50%] text-neutral-200 flex justify-center items-center animate-bounce cursor-pointer transition-colors hover:text-orange-400">
+        <ArrowDownImage width={35} height={35} />
+    </div>}
+</section>
+
+<style>
+    .bg-software {
+        background: url('/software.png?251123') center center/cover;
+    }
+</style>

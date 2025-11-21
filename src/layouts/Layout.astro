@@ -1,0 +1,92 @@
+---
+import "@styles/global.css";
+import Menu from "@components/Menu.astro";
+
+import { useTranslations, getLangFromUrl } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{t('title')}</title>
+        <script src="https://cdn.counter.dev/script.js" data-id="04f734c3-3277-4069-a34c-0a63d569e4db" data-utcoffset="2"></script>
+	</head>
+	<body x-data="globalApp()">
+        <Menu />
+		<slot />
+	</body>
+</html>
+
+<script is:inline>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('globalApp', () => ({
+            active: null,
+            scrolled: false,
+            sections: [],
+
+            // Initialize the global app
+            init() {
+
+                // Populate sections array based on existing sections in the DOM
+                document.querySelectorAll('section[id]').forEach(section => {
+                    const id = section.getAttribute('id');
+                    if (!this.sections.includes(id) && section.dataset.nospy !== "true") {
+                        this.sections.push(id);
+                    }
+                });
+
+                // Define the active section on scroll
+                const observerOptions = {
+                    root: null,
+                    threshold: 0.5
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            this.active = entry.target.id;
+                        }
+                    });
+                }, observerOptions);
+
+                this.sections.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) observer.observe(el);
+                });
+
+                // Define the active section on page load
+                const initialHash = window.location.hash.replace('#', '');
+                if (initialHash && this.sections.includes(initialHash)) {
+                    this.active = initialHash;
+                } else {
+                    this.active = this.sections[0];
+                }
+
+                // Change navbar style on scroll
+                window.addEventListener('scroll', () => {
+                    this.scrolled = window.scrollY > window.innerHeight * .3;
+                })
+                this.scrolled = window.scrollY > window.innerHeight * .3;
+            },
+
+            // Navigate to the next section
+            goNext() {
+                const currentIndex = this.sections.indexOf(this.active);
+                const nextIndex = (currentIndex + 1) % this.sections.length;
+                const nextSection = this.sections[nextIndex];
+                document.getElementById(nextSection).scrollIntoView({ behavior: 'smooth' });
+            },
+
+            // Change language while keeping the same section
+            goTranslation(lang) {
+                const active = this.active === 'home' ? null : this.active;
+                window.location.href = '/' + lang + '/' + (active ? '#' + active : '');
+            }
+
+        }));
+    });
+</script>

@@ -1,0 +1,38 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+import Docs from '@assets/docs.svg';
+import YoutubeLogo from '@assets/youtube.svg';
+---
+<section id="docs" class="bg-neutral-500/5">
+    <div class="container section-wrapper w-full">
+        <div class="container mx-auto mb-20">
+            <div class="flex flex-col gap-10">
+                <h1 class="bold text-4xl text-center">{t('docs.title')}</h1>
+                <p class="text-lg md:text-xl md:text-center">{t('docs.description')}</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-center gap-10 w-full">
+            <div class="flex flex-col items-center bg-neutral-500/10 p-6 rounded-lg w-full text-center">
+                <Docs width={64} height={64} />
+                <h2 class="font-bold text-2xl mt-4">{t('docs.docs.title')}</h2>
+                <p class="text-xl mt-4">{t('docs.docs.description')}</p>
+                <div class="flex flex-col items-center mt-8 gap-4">
+                    <a href={t('docs.docs.url')} @click.prevent="" target="_blank" class="btn btn-disabled">{t('comingSoon')}</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center bg-neutral-500/10 p-6 rounded-lg w-full text-center">
+                <YoutubeLogo width={64} height={64} />
+                <h2 class="font-bold text-2xl mt-4">{t('docs.youtube.title')}</h2>
+                <p class="text-xl mt-4">{t('docs.youtube.description')}</p>
+                <div class="flex flex-col items-center mt-8 gap-4">
+                    <a href={t('docs.youtube.url')} @click.prevent="" target="_blank" class="btn btn-disabled">{t('comingSoon')}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

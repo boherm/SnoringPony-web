@@ -1,0 +1,22 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+import Love from '@assets/love.svg';
+---
+<section id="thanks" class="bg-neutral-500/5 !min-h-auto" data-nospy="true">
+    <div class="section-wrapper">
+        <div class="container mx-auto flex flex-col gap-8 text-center">
+            <div class="flex flex-col gap-3">
+                <h1 class="text-2xl text-neutral-300">{t('footer.thanks.title')}</h1>
+                <div class="text-lg text-neutral-400"><Fragment set:html={t('footer.thanks.to')} /></div>
+            </div>
+            <div class="text-sm flex gap-1 justify-center select-none text-neutral-500">
+                <div>Made with</div>
+                <Love width={20} height={20} class="inline-block text-red-500 animate-pulse" alt="love" />
+                <div>by <a href="https://boherm.dev/" target="_blank">boherm</a></div>
+            </div>
+        </div>
+    </div>
+</section>

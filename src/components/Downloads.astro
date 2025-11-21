@@ -1,0 +1,22 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+import DownloadPresenter from '@components/DownloadPresenter.astro';
+---
+<section id="downloads" class="bg-neutral-200/5">
+    <div class="section-wrapper">
+        <div class="container mx-auto mb-20">
+            <div class="flex flex-col gap-10">
+                <h1 class="bold text-4xl text-center">{t('downloads.title')}</h1>
+                <p class="text-lg md:text-xl md:text-center">{t('downloads.description')}</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-10">
+            <DownloadPresenter type="stable" />
+            <DownloadPresenter type="beta" version="1.2.3b1" />
+        </div>
+    </div>
+</section>

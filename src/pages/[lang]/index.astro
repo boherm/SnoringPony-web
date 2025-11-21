@@ -1,0 +1,33 @@
+---
+import Config from '@config';
+import { languages } from "@i18n/ui";
+import type { GetStaticPaths } from "astro";
+
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/Hero.astro';
+import Features from '@components/Features.astro';
+import Downloads from '@components/Downloads.astro';
+import Docs from '@components/Docs.astro';
+import Community from '@components/Community.astro';
+import Footer from '@components/Footer.astro';
+
+export const getStaticPaths = (() => {
+return Object.keys(languages)
+    .map((lang) =>
+        ({
+            params: { lang },
+        })
+    );
+}) satisfies GetStaticPaths;
+---
+
+<Layout>
+	<Hero />
+    {!Config.comingSoon &&
+        <Features />
+        <Downloads />
+        <Docs />
+        <Community />
+    }
+    <Footer />
+</Layout>

@@ -1,0 +1,115 @@
+---
+import Config from '@config';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+import MenuBurger from '@assets/menu-burger.svg';
+import Home from '@assets/home.svg';
+import GithubImage from '@assets/github.svg';
+import FlagFr from '@assets/flag-fr.svg';
+import FlagEn from '@assets/flag-en.svg';
+---
+{Config.comingSoon &&
+    <nav>
+        <div class="w-full relative mx-auto py-4">
+            { lang != 'fr' && <a href="/fr/" @click.prevent="goTranslation('fr')" class="absolute top-1/2 translate-y-[-50%] right-3 drop-shadow-md drop-shadow-bg-neutral-950"><FlagFr width={20} height={20} /></a>}
+            { lang != 'en' && <a href="/en/" @click.prevent="goTranslation('en')" class="absolute top-1/2 translate-y-[-50%] right-3 drop-shadow-md drop-shadow-bg-neutral-950"><FlagEn width={20} height={20} /></a>}
+        </div>
+    </nav>
+}
+
+{!Config.comingSoon &&
+    <nav class="hidden md:block transition-all" :class="scrolled ? 'bg-neutral-900/70 backdrop-blur-md' : 'bg-transparent'">
+        <div class="container mx-auto py-4">
+            <ul class="flex justify-center items-center space-x-6">
+                <li>
+                    <a
+                        href="#home"
+                        :class="active === 'home' ? 'active' : ''"
+                        ><Home width={22} height={22} /></a>
+                <li>
+                    <a
+                        href="#features"
+                        :class="active === 'features' ? 'active' : ''"
+                        >{t('menu.features')}</a>
+                </li>
+                <li>
+                    <a
+                        href="#downloads"
+                        :class="active === 'downloads' ? 'active' : ''"
+                        >{t('menu.downloads')}</a>
+                </li>
+                <li>
+                    <a
+                        href="#docs"
+                        :class="active === 'docs' ? 'active' : ''"
+                        >{t('menu.docs')}</a>
+                </li>
+                <li>
+                    <a
+                        href="#community"
+                        :class="active === 'community' ? 'active' : ''"
+                        >{t('menu.community')}</a>
+                </li>
+                <li>
+                    { lang != 'fr' && <a href="/fr/" @click.prevent="goTranslation('fr')" class="drop-shadow-md drop-shadow-bg-neutral-950"><FlagFr width={20} height={20} /></a>}
+                    { lang != 'en' && <a href="/en/" @click.prevent="goTranslation('en')" class="drop-shadow-md drop-shadow-bg-neutral-950"><FlagEn width={20} height={20} /></a>}
+                </li>
+            </ul>
+        </div>
+        <a href={ Config.appRepository } target="_blank" class="absolute top-1/2 translate-y-[-50%] right-3 drop-shadow-md drop-shadow-bg-neutral-950">
+            <GithubImage width={30} height={30} />
+        </a>
+    </nav>
+}
+
+{!Config.comingSoon &&
+    <nav x-data="{open:false}" class="fixed md:hidden z-50 p-3 text-right">
+        <div class="inline-flex gap-3 items-center justify-end bg-neutral-900/70 backdrop-blur-md rounded-md p-2" :class="open ? 'rounded-b-none' : ''">
+            <MenuBurger width={25} height={25} @click.prevent="open=!open" />
+
+            <a href={ Config.appRepository } target="_blank" class="drop-shadow-md drop-shadow-bg-neutral-950 !text-neutral-200">
+                <GithubImage width={25} height={25} />
+            </a>
+
+            { lang != 'fr' && <a href="/fr/" class="drop-shadow-md drop-shadow-bg-neutral-950"><FlagFr width={25} height={25} /></a>}
+            { lang != 'en' && <a href="/en/" class="drop-shadow-md drop-shadow-bg-neutral-950"><FlagEn width={25} height={25} /></a>}
+        </div>
+        <div x-show="open" x-cloak class="flex justify-end">
+            <div @click="open=false" class="w-[250px] py-5 bg-neutral-900/70 backdrop-blur-md rounded-md rounded-tr-none">
+                <ul class="flex flex-col justify-center items-center space-y-3">
+                    <li>
+                        <a
+                            href="#home"
+                            :class="active === 'home' ? 'active' : ''"
+                            ><Home width={22} height={22} /></a>
+                    <li>
+                        <a
+                            href="#features"
+                            :class="active === 'features' ? 'active' : ''"
+                            >{t('menu.features')}</a>
+                    </li>
+                    <li>
+                        <a
+                            href="#downloads"
+                            :class="active === 'downloads' ? 'active' : ''"
+                            >{t('menu.downloads')}</a>
+                    </li>
+                    <li>
+                        <a
+                            href="#docs"
+                            :class="active === 'docs' ? 'active' : ''"
+                            >{t('menu.docs')}</a>
+                    </li>
+                    <li>
+                        <a
+                            href="#community"
+                            :class="active === 'community' ? 'active' : ''"
+                            >{t('menu.community')}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+}
