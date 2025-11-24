@@ -17,7 +17,7 @@ export const ui = {
             community: "Community",
         },
         hero: {
-            baseline: "The control of your show without falling off your horse",
+            baseline: "Control your shows without falling off your horse",
             comingSoon: "Coming soon to your stable!",
         },
         features: {
@@ -96,7 +96,7 @@ export const ui = {
             community: "Communauté",
         },
         hero: {
-            baseline: "La régie de votre spectacle sans tomber de selle",
+            baseline: "La régie de vos spectacles sans tomber de selle",
             comingSoon: "Bientôt disponible dans votre écurie !",
         },
         features: {
