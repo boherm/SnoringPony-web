@@ -1,46 +1,59 @@
-# Astro Starter Kit: Basics
+# Snoring Pony: Officiel Website
 
-```sh
-npm create astro@latest -- --template basics
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> 🐴 **Welcome to this website of Snoring Pony!** This project is built with Astro. Feel free to explore and develop!
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Here is the current structure of the website:
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── public/                  # Website favicon and other public assets
+│   ├── favicon.svg
+│   └── software.png
+├── src/
+│   ├── assets/              # Static assets like images and icons
+│   │   ├── logo.png
+│   │   ├── github.svg
+│   │   ├── home.svg
+│   │   └── ...
+│   ├── components/          # Reusable UI components
+│   │   ├── Docs.astro
+│   │   ├── Downloads.astro
+│   │   ├── Features.astro
+│   │   └── ...
+│   ├── layouts/             # Layout components for pages
+│   │   └── Layout.astro     # Main layout for the site
+│   ├── pages/               # Application pages
+│   │   ├── [lang]/          # Language-specific pages
+│   │   │   └── index.astro  # Homepage per language
+│   │   ├── api/             # API routes
+│   │   │   └── check-update.ts
+│   ├── styles/              # Global and component-specific styles
+│   │   └── global.css
+│   └── i18n/                # Internationalization utilities
+│       ├── ui.ts            # UI strings for translations
+│       └── utils.ts         # Translation helpers
+├── astro.config.mjs         # Astro configuration file
+├── package.json             # Project dependencies and scripts
+└── tsconfig.json            # TypeScript configuration
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+For more details, feel free to explore the corresponding folders and files.
 
-## 🧞 Commands
+## 🧞 Useful Commands
 
-All commands are run from the root of the project, from a terminal:
+All commands should be executed from the root of the project, in your terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+|                   Command | Action                                            |
+| :------------------------ | :-----------------------------------------------  |
+|             `npm install` | Installs project dependencies                     |
+|             `npm run dev` | Starts the development server at `localhost:4321` |
+|           `npm run build` | Builds your site for production into `./dist/`    |
+|         `npm run preview` | Previews the built site before deployment         |
+|       `npm run astro ...` | Executes CLI commands like `astro add`            |
+| `npm run astro -- --help` | Displays help for the Astro CLI                   |
 
-## 👀 Want to learn more?
+## 👀 Want to Learn More?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Check out the [official Astro documentation](https://docs.astro.build) or join their [Discord server](https://astro.build/chat).
