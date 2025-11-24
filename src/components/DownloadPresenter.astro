@@ -13,21 +13,21 @@ import LinuxLogo from '@assets/linux.svg';
 
 import Close from '@assets/close.svg';
 
-const changelogUrl = Config.appRepository + '/releases/tag/' + version;
+const changelogUrl = Config.github.getChangeLogUrl(version);
 import Logo from '@assets/logo.png';
 
 const downloadUrl = {
-    win64: changelogUrl + '/downloads/SnoringPony-' + version + '-win64.exe',
-    macosSilicon: changelogUrl + '/downloads/SnoringPony-' + version + '-macos-arm64.dmg',
-    macosIntel: changelogUrl + '/downloads/SnoringPony-' + version + '-macos-x64.dmg',
-    linux: changelogUrl + '/downloads/SnoringPony-' + version + '-linux.AppImage',
+    win64: Config.github.getDownloadUrl(version, 'win-x64', 'exe'),
+    macosSilicon: Config.github.getDownloadUrl(version, 'osx-silicon', 'pkg'),
+    macosIntel: Config.github.getDownloadUrl(version, 'osx-intel', 'pkg'),
+    linux64: Config.github.getDownloadUrl(version, 'linux-x64', 'AppImage'),
 };
 
 const downloadLabel = {
     win64: sprintf(t('downloads.modal.download'), version, 'Windows 64-bits'),
     macosSilicon: sprintf(t('downloads.modal.download'), version, 'MacOS Apple Silicon'),
     macosIntel: sprintf(t('downloads.modal.download'), version, 'MacOS Intel'),
-    linux: sprintf(t('downloads.modal.download'), version, 'Linux'),
+    linux64: sprintf(t('downloads.modal.download'), version, 'Linux 64-bits'),
 };
 ---
 { version &&
@@ -63,7 +63,7 @@ const downloadLabel = {
                 <LinuxLogo width={64} height={64} />
                 <h2 class="font-bold text-2xl mt-4">Linux</h2>
                 <div class="flex flex-col items-center mt-4 gap-4">
-                    <a href="#" @click.prevent="openModal = true; url = $event.currentTarget.dataset.url; label = $event.currentTarget.dataset.label;" data-url={downloadUrl.linux} data-label={downloadLabel.linux} class="btn">{t('downloads.downloadLinux')}</a>
+                    <a href="#" @click.prevent="openModal = true; url = $event.currentTarget.dataset.url; label = $event.currentTarget.dataset.label;" data-url={downloadUrl.linux64} data-label={downloadLabel.linux64} class="btn">{t('downloads.downloadLinux64')}</a>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@ const downloadLabel = {
                         <a href="https://github.com/sponsors/boherm" target="_blank" class="btn btn-secondary">{t('downloads.modal.donateGithub')}</a>
                     </div>
                     <div class="text-center">
-                        <a x-bind:href="url" class="btn mt-2 btn-large" x-text="label"></a>
+                        <a x-bind:href="url" class="btn mt-2 btn-large" target="_blank" x-text="label"></a>
                     </div>
                 </div>
             </div>

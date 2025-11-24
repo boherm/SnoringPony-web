@@ -1,9 +1,27 @@
 ---
+import Config from '@config';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 import DownloadPresenter from '@components/DownloadPresenter.astro';
+
+const apiData = await fetch(Config.github.getApiReleases()).then(res => res.json());
+let betaVersion = null;
+let stableVersion = null;
+
+for (let i = 0; i < apiData.length; i++) {
+    const release = apiData[i];
+    if (betaVersion === null && release.tag_name.includes('b')) {
+        betaVersion = release.tag_name;
+    }
+    if (stableVersion === null && !release.tag_name.includes('b')) {
+        stableVersion = release.tag_name;
+    }
+    if (betaVersion !== null && stableVersion !== null) {
+        break;
+    }
+}
 ---
 <section id="downloads" class="bg-neutral-200/5">
     <div class="section-wrapper">
@@ -15,8 +33,8 @@ import DownloadPresenter from '@components/DownloadPresenter.astro';
         </div>
 
         <div class="flex flex-col gap-10">
-            <DownloadPresenter type="stable" />
-            <DownloadPresenter type="beta" version="1.2.3b1" />
+            <DownloadPresenter type="stable" version={stableVersion} />
+            <DownloadPresenter type="beta" version={betaVersion} />
         </div>
     </div>
 </section>

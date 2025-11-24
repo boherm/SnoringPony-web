@@ -58,7 +58,7 @@ import FlagEn from '@assets/flag-en.svg';
                 </li>
             </ul>
         </div>
-        <a href={ Config.appRepository } target="_blank" class="absolute top-1/2 translate-y-[-50%] right-3 drop-shadow-md drop-shadow-bg-neutral-950">
+        <a href={Config.github.getUrl()} target="_blank" class="absolute top-1/2 translate-y-[-50%] right-3 drop-shadow-md drop-shadow-bg-neutral-950">
             <GithubImage width={30} height={30} />
         </a>
     </nav>
@@ -69,7 +69,7 @@ import FlagEn from '@assets/flag-en.svg';
         <div class="inline-flex gap-3 items-center justify-end bg-neutral-900/70 backdrop-blur-md rounded-md p-2" :class="open ? 'rounded-b-none' : ''">
             <MenuBurger width={25} height={25} @click.prevent="open=!open" />
 
-            <a href={ Config.appRepository } target="_blank" class="drop-shadow-md drop-shadow-bg-neutral-950 !text-neutral-200">
+            <a href={Config.github.getUrl()} target="_blank" class="drop-shadow-md drop-shadow-bg-neutral-950 !text-neutral-200">
                 <GithubImage width={25} height={25} />
             </a>
 
