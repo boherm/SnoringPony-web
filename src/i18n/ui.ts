@@ -82,7 +82,7 @@ export const ui = {
         footer: {
             thanks: {
                 title: "Thanks to",
-                to: '<a href="http://benjamin.kuperberg.fr/" target="_blank">Ben Kuperberg</a> <small>(<a href="https://github.com/benkuper/juce_organicui" target="_blank">juce_organicui</a>)</small> - Cindy - Indy <small>(the real poney)</small> - All contributors and testers',
+                to: '<a href="http://benjamin.kuperberg.fr/" target="_blank">Ben Kuperberg</a> <small>(<a href="https://github.com/benkuper/juce_organicui" target="_blank">juce_organicui</a>)</small> - Cindy - Indy <small>(<a href="/indy.jpg" target="_blank">the real poney</a>)</small> - All contributors and testers',
             },
         },
     },
@@ -161,7 +161,7 @@ export const ui = {
         footer: {
             thanks: {
                 title: "Remerciements",
-                to: '<a href="http://benjamin.kuperberg.fr/" target="_blank">Ben Kuperberg</a> <small>(<a href="https://github.com/benkuper/juce_organicui" target="_blank">juce_organicui</a>)</small> - Cindy - Indy <small>(le vrai poney)</small> - Tous les contributeurs et testeurs',
+                to: '<a href="http://benjamin.kuperberg.fr/" target="_blank">Ben Kuperberg</a> <small>(<a href="https://github.com/benkuper/juce_organicui" target="_blank">juce_organicui</a>)</small> - Cindy - Indy <small>(<a href="/indy.jpg" target="_blank">le vrai poney</a>)</small> - Tous les contributeurs et testeurs',
             },
         },
     },
