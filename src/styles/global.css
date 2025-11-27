@@ -20,6 +20,7 @@ nav {
 
 section {
     @apply min-h-[70dvh] py-10 md:py-20 px-4 flex flex-col justify-center items-center;
+    @apply shadow-lg shadow-neutral-900/40;
 
     &:nth-child(odd) {
         @apply bg-neutral-700/10;
