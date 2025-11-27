@@ -12,6 +12,7 @@ export const ui = {
         comingSoon: "Coming soon!",
         menu: {
             about: "À propos",
+            features: "Features",
             downloads: "Downloads",
             docs: "Documentation",
             community: "Community",
@@ -32,6 +33,10 @@ export const ui = {
                 text2: "You can find the <strong>source code</strong> directly on <a href=\"https://github.com/boherm/SnoringPony\"target=\"_blank\">GitHub</a>, so if you want to join the adventure and add new features, <strong>feel free to contribute!</strong>",
                 text3: "If you don't have time to contribute but still want to help, <strong>you can also make a donation</strong>, so I can continue to <strong>work on this project in my free time</strong>, and allow me to feed my horses <small>(yes, really!)</small>:",
             }
+        },
+        features: {
+            title: 'Features',
+            description: 'Discover the main features of SnoringPony',
         },
         downloads: {
             title: "Saddle up!",
@@ -101,6 +106,7 @@ export const ui = {
         comingSoon: "Bientôt disponible !",
         menu: {
             about: "À propos",
+            features: "Fonctionnalités",
             downloads: "Téléchargements",
             docs: "Documentation",
             community: "Communauté",
@@ -121,6 +127,10 @@ export const ui = {
                 text2: "Tu peux retrouver <strong>les sources</strong> directement sur <a href=\"https://github.com/boherm/SnoringPony\"target=\"_blank\">GitHub</a>, donc si tu souhaites participer à l'aventure et rajouter de nouvelles fonctionnalitées, <strong>n'hésite pas à contribuer&nbsp;!</strong>",
                 text3: "Si tu n'as pas de temps à donner mais que tu souhaites aider, <strong>tu peux aussi faire un don</strong>, pour que je puisse continuer à <strong>travailler sur ce projet dans mon temps libre</strong>, et me permettre de nourir mes chevaux <small>(oui vraiment&nbsp;!)</small>&nbsp;:"
             }
+        },
+        features: {
+            title: 'Fonctionnalités',
+            description: 'Découvrez les fonctionnalités principales de SnoringPony',
         },
         downloads: {
             title: "En selle !",
