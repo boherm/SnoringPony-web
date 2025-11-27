@@ -1,5 +1,4 @@
 ---
-import Config from '@config';
 import { Picture } from 'astro:assets';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
@@ -10,7 +9,7 @@ import PaypalLogo from '@assets/paypal.svg';
 import PatreonLogo from '@assets/patreon.svg';
 import GithubLogo from '@assets/github.svg';
 ---
-<section id="about" class="bg-neutral-500/5">
+<section id="about">
     <div class="section-wrapper">
         <div class="container mx-auto mb-15">
 

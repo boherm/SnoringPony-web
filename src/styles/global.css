@@ -21,6 +21,18 @@ nav {
 section {
     @apply min-h-[70dvh] py-10 md:py-20 px-4 flex flex-col justify-center items-center;
 
+    &:nth-child(odd) {
+        @apply bg-neutral-700/10;
+    }
+
+    &:nth-child(even) {
+        @apply bg-neutral-700/40;
+    }
+
+    &[id="thanks"] {
+        @apply bg-neutral-800;
+    }
+
     .section-wrapper {
         @apply w-full;
     }

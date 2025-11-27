@@ -92,7 +92,7 @@ export const ui = {
         footer: {
             thanks: {
                 title: "Thanks to",
-                to: '<a href="http://benjamin.kuperberg.fr/" target="_blank">Ben Kuperberg</a> <small>(<a href="https://github.com/benkuper/juce_organicui" target="_blank">juce_organicui</a>)</small> - Cindy - Indy <small>(<a href="/indy.jpg" target="_blank">the real poney</a>)</small> - All contributors and testers',
+                to: '<a href="http://benjamin.kuperberg.fr/" target="_blank">Ben Kuperberg</a> <small>(<a href="https://github.com/benkuper/juce_organicui" target="_blank">juce_organicui</a>)</small> - Cindy - Indy <small>(<a href="/indy.jpg" target="_blank">the real poney</a>)</small> - All contributors, testers and donors',
             },
         },
     },
@@ -119,7 +119,7 @@ export const ui = {
                 title: "Est-ce que c'est vraiment gratuit ?",
                 text1: "<strong>Tout à fait, il est gratuit et le restera&nbsp;!</strong>",
                 text2: "Tu peux retrouver <strong>les sources</strong> directement sur <a href=\"https://github.com/boherm/SnoringPony\"target=\"_blank\">GitHub</a>, donc si tu souhaites participer à l'aventure et rajouter de nouvelles fonctionnalitées, <strong>n'hésite pas à contribuer&nbsp;!</strong>",
-                text3: "Si tu n'as pas de temps à donner mais que tu souhaites aider, <strong>tu peux aussi faire un don</strong>, pour que je puisse continuer à <strong>travailler sur ce projet dans mon temps libre</strong>, et me permettre de nourir mes chevaux <small>(oui vraiment !)</small>&nbsp;:"
+                text3: "Si tu n'as pas de temps à donner mais que tu souhaites aider, <strong>tu peux aussi faire un don</strong>, pour que je puisse continuer à <strong>travailler sur ce projet dans mon temps libre</strong>, et me permettre de nourir mes chevaux <small>(oui vraiment&nbsp;!)</small>&nbsp;:"
             }
         },
         downloads: {
@@ -181,7 +181,7 @@ export const ui = {
         footer: {
             thanks: {
                 title: "Remerciements",
-                to: '<a href="http://benjamin.kuperberg.fr/" target="_blank">Ben Kuperberg</a> <small>(<a href="https://github.com/benkuper/juce_organicui" target="_blank">juce_organicui</a>)</small> - Cindy - Indy <small>(<a href="/indy.jpg" target="_blank">le vrai poney</a>)</small> - Tous les contributeurs et testeurs',
+                to: '<a href="http://benjamin.kuperberg.fr/" target="_blank">Ben Kuperberg</a> <small>(<a href="https://github.com/benkuper/juce_organicui" target="_blank">juce_organicui</a>)</small> - Cindy - Indy <small>(<a href="/indy.jpg" target="_blank">le vrai poney</a>)</small> - Tous les contributeurs, testeurs et donateurs',
             },
         },
     },
