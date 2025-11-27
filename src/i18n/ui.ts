@@ -11,7 +11,7 @@ export const ui = {
         title: "SnoringPony - Open source show control software",
         comingSoon: "Coming soon!",
         menu: {
-            features: "Features",
+            about: "À propos",
             downloads: "Downloads",
             docs: "Documentation",
             community: "Community",
@@ -20,8 +20,18 @@ export const ui = {
             baseline: "Control your shows without falling off your horse",
             comingSoon: "Coming soon to your stable!",
         },
-        features: {
-            title: "Features",
+        about: {
+            title: "About SnoringPony",
+            block1: {
+                title: "What is SnoringPony?",
+                text: "<strong>SnoringPony</strong> is an <strong>open-source</strong> software, under <a href=\"https://www.gnu.org/licenses/gpl-3.0.fr.html\" target=\"_blank\"><strong>GPLv3 license</strong></a>, aimed at simplifying the programming of <strong>live shows</strong>. Designed for <strong>theater, dance, or musicals companies</strong>, this software, based on <strong>Cue</strong> system, allows you to <strong>easily trigger various programmed actions</strong> during your show as easily as a pony's neigh!",
+            },
+            block2: {
+                title: "Is it really free?",
+                text1: "<strong>Absolutely, it is free and will remain so!</strong>",
+                text2: "You can find the <strong>source code</strong> directly on <a href=\"https://github.com/boherm/SnoringPony\"target=\"_blank\">GitHub</a>, so if you want to join the adventure and add new features, <strong>feel free to contribute!</strong>",
+                text3: "If you don't have time to contribute but still want to help, <strong>you can also make a donation</strong>, so I can continue to <strong>work on this project in my free time</strong>, and allow me to feed my horses <small>(yes, really!)</small>:",
+            }
         },
         downloads: {
             title: "Saddle up!",
@@ -90,7 +100,7 @@ export const ui = {
         title: "SnoringPony - Logiciel libre pour la régie technique du spectacle vivant",
         comingSoon: "Bientôt disponible !",
         menu: {
-            features: "Fonctionnalités",
+            about: "À propos",
             downloads: "Téléchargements",
             docs: "Documentation",
             community: "Communauté",
@@ -99,8 +109,18 @@ export const ui = {
             baseline: "La régie de vos spectacles sans tomber de selle",
             comingSoon: "Bientôt disponible dans votre écurie !",
         },
-        features: {
-            title: "Fonctionnalités",
+        about: {
+            title: "À propos de SnoringPony",
+            block1: {
+                title: "Qu'est-ce que SnoringPony ?",
+                text: "<strong>SnoringPony</strong> est un logiciel <strong>open-source</strong>, sous <a href=\"https://www.gnu.org/licenses/gpl-3.0.fr.html\" target=\"_blank\"><strong>licence GPLv3</strong></a>, visant à simplifier la programmation des <strong>spectacles vivants</strong>. Conçu pour les <strong>compagnies de théâtre, de danse ou de comédie musicale</strong>, ce logiciel, reposant sur un système de <strong>Cue</strong>, permet de <strong>lancer facilement diverses actions programmées</strong> au cours de votre spectacle aussi facilement que de pousser un hennissement pour un poney&nbsp;!",
+            },
+            block2: {
+                title: "Est-ce que c'est vraiment gratuit ?",
+                text1: "<strong>Tout à fait, il est gratuit et le restera&nbsp;!</strong>",
+                text2: "Tu peux retrouver <strong>les sources</strong> directement sur <a href=\"https://github.com/boherm/SnoringPony\"target=\"_blank\">GitHub</a>, donc si tu souhaites participer à l'aventure et rajouter de nouvelles fonctionnalitées, <strong>n'hésite pas à contribuer&nbsp;!</strong>",
+                text3: "Si tu n'as pas de temps à donner mais que tu souhaites aider, <strong>tu peux aussi faire un don</strong>, pour que je puisse continuer à <strong>travailler sur ce projet dans mon temps libre</strong>, et me permettre de nourir mes chevaux <small>(oui vraiment !)</small>&nbsp;:"
+            }
         },
         downloads: {
             title: "En selle !",

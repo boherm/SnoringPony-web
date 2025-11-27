@@ -5,7 +5,7 @@ import type { GetStaticPaths } from "astro";
 
 import Layout from '@layouts/Layout.astro';
 import Hero from '@components/Hero.astro';
-import Features from '@components/Features.astro';
+import About from '@components/About.astro';
 import Downloads from '@components/Downloads.astro';
 import Docs from '@components/Docs.astro';
 import Community from '@components/Community.astro';
@@ -24,7 +24,7 @@ return Object.keys(languages)
 <Layout>
 	<Hero />
     {!Config.comingSoon &&
-        <Features />
+        <About />
         <Downloads />
         <Docs />
         <Community />
