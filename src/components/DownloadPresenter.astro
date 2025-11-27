@@ -11,6 +11,10 @@ import WindowsLogo from '@assets/windows.svg';
 import MacLogo from '@assets/macos.svg';
 import LinuxLogo from '@assets/linux.svg';
 
+import PaypalLogo from '@assets/paypal.svg';
+import PatreonLogo from '@assets/patreon.svg';
+import GithubLogo from '@assets/github.svg';
+
 import Close from '@assets/close.svg';
 
 const changelogUrl = Config.github.getChangeLogUrl(version);
@@ -81,9 +85,24 @@ const downloadLabel = {
                         <p class="text-xl font-bold leading-8">{t('downloads.modal.text2')}</p>
                     </div>
                     <div class="flex justify-center gap-3">
-                        <a href="https://www.paypal.me/boerms" target="_blank" class="btn btn-secondary">{t('downloads.modal.donatePaypal')}</a>
-                        <a href="https://patreon.com/boherm" target="_blank" class="btn btn-secondary">{t('downloads.modal.donatePatreon')}</a>
-                        <a href="https://github.com/sponsors/boherm" target="_blank" class="btn btn-secondary">{t('downloads.modal.donateGithub')}</a>
+                        <a href="https://www.paypal.me/boerms" target="_blank" class="btn btn-secondary">
+                            <span class="inline-flex items-center gap-2">
+                                <PaypalLogo width={20} height={20} />
+                                <span>{t('downloads.modal.donatePaypal')}</span>
+                            </span>
+                        </a>
+                        <a href="https://patreon.com/boherm" target="_blank" class="btn btn-secondary">
+                            <span class="inline-flex items-center gap-2">
+                                <PatreonLogo width={20} height={20} />
+                                <span>{t('downloads.modal.donatePatreon')}</span>
+                            </span>
+                        </a>
+                        <a href="https://github.com/sponsors/boherm" target="_blank" class="btn btn-secondary">
+                            <span class="inline-flex items-center gap-2">
+                                <GithubLogo width={20} height={20} />
+                                <span>{t('downloads.modal.donateGithub')}</span>
+                            </span>
+                        </a>
                     </div>
                     <div class="text-center">
                         <a x-bind:href="url" class="btn mt-2 btn-large" target="_blank" x-text="label"></a>
