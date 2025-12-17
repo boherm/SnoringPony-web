@@ -37,6 +37,40 @@ export const ui = {
         features: {
             title: 'Features',
             description: 'Discover the main features of SnoringPony',
+            sliders: [
+                { image: '/ui.png', description: "Main window of SnoringPony" },
+                { image: '/conductor.png', description: "Conductor window to display current and next cue." },
+                { image: '/osc-cue.png', description: "Example of the configuration for a OSC Cue" }
+            ],
+            blocks: [
+                {
+                    title: 'Audio',
+                    items: [
+                        "Playing audio files (WAV, MP3, etc.)",
+                        "Using multiple audio interfaces and simultaneous audio outputs",
+                        "Cue to play multiple audio files at the same time on different outputs",
+                        "Playlist cue to chain multiple audio files one after the other",
+                    ]
+                },
+                {
+                    title: 'OSC',
+                    items: [
+                        "Incoming OSC messages to control SnoringPony remotely",
+                        "Cue to send custom OSC messages",
+                        "Use of templates to facilitate programming messages to send",
+                    ]
+                },
+                {
+                    title: "And many more to discover!",
+                    items: [
+                        "User-friendly and intuitive interface",
+                        "Multi-platform support (Windows, MacOS, Linux)",
+                        "Fire cues in relation to other cues (before, after, at the same time)",
+                        "Error and log management for simplified troubleshooting",
+                        "Colorable Cuelist and Cues for better visual organization",
+                    ]
+                }
+            ],
         },
         downloads: {
             title: "Saddle up!",
@@ -131,6 +165,40 @@ export const ui = {
         features: {
             title: 'Fonctionnalités',
             description: 'Découvrez les fonctionnalités principales de SnoringPony',
+            sliders: [
+                { image: '/ui.png', description: "Interface de SnoringPony" },
+                { image: '/conductor.png', description: "Fenêtre de conducteur permettant de visualiser l'action en cours ainsi que la prochaine à être jouée." },
+                { image: '/osc-cue.png', description: "Exemple de programmation d'une Cue de type OSC" }
+            ],
+            blocks: [
+                {
+                    title: 'Audio',
+                    items: [
+                        'Lecture de fichiers audio (WAV, MP3, etc.)',
+                        'Utilisation de plusieurs interfaces audio et de sorties audio simultanément',
+                        'Action pour lire plusieurs fichiers audio en même temps sur des sorties différentes',
+                        'Action de playlist pour enchaîner plusieurs fichiers audio les uns après les autres',
+                    ]
+                },
+                {
+                    title: 'OSC',
+                    items: [
+                        "Réception de messages OSC pour contrôler SnoringPony à distance",
+                        "Actions pour envoyer des messages OSC personnalisés",
+                        "Utilisation de template pour faciliter la programmation des messages a envoyer",
+                    ]
+                },
+                {
+                    title: "Et d'autres à découvrir !",
+                    items: [
+                        "Interface intuitive et facile à utiliser",
+                        "Support multi-plateforme (Windows, MacOS, Linux)",
+                        "Lancement d'actions par rapport à d'autres cues (avant, après, en même temps)",
+                        "Gestion des erreurs et des logs pour un dépannage simplifié",
+                        "Cuelist et Cues colorables pour une meilleure organisation visuelle",
+                    ]
+                }
+            ],
         },
         downloads: {
             title: "En selle !",
