@@ -16,6 +16,11 @@ const Config = {
         getApiReleases() {
             return `https://api.github.com/repos/${this.owner}/${this.repo}/releases?per_page=100`;
         }
+    },
+    discord: {
+        getUrl() {
+            return `https://discord.gg/7HNzrvuZUS`;
+        },
     }
 };
 export default Config;

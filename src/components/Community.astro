@@ -31,7 +31,8 @@ import DiscordLogo from '@assets/discord.svg';
                 <h2 class="font-bold text-2xl mt-4">{t('community.discord.title')}</h2>
                 <p class="text-xl mt-4">{t('community.discord.description')}</p>
                 <div class="flex flex-col items-center mt-8 gap-4">
-                    <a href={t('community.discord.url')} @click.prevent="" target="_blank" class="btn btn-disabled">{t('comingSoon')}</a>
+
+                    <a href={Config.discord.getUrl()} target="_blank" class="btn">{t('community.discord.label')}</a>
                 </div>
             </div>
         </div>
