@@ -69,6 +69,15 @@ export const ui = {
                         "Error and log management for simplified troubleshooting",
                         "Colorable Cuelist and Cues for better visual organization",
                     ]
+                },
+                {
+                    title: "And coming very soon...",
+                    items: [
+                        "MIDI support",
+                        "Feedback for OSC and MIDI interfaces",
+                        "DCA management to help you mix your musical shows",
+                        "..."
+                    ]
                 }
             ],
         },
@@ -77,6 +86,10 @@ export const ui = {
             description: "Download SnoringPony and start programming your next show today.",
             latestStableVersion: "Latest stable version",
             latestBetaVersion: "Latest beta version",
+            devVersion: {
+                title: "Developer version",
+                description: "For adventurers wishing to test the latest features under development. May be unstable and contain bugs!",
+            },
             betaWarning: {
                 title: "⚠ Warning ⚠",
                 message: "This version may be unstable and contain bugs!",
@@ -197,6 +210,15 @@ export const ui = {
                         "Gestion des erreurs et des logs pour un dépannage simplifié",
                         "Cuelist et Cues colorables pour une meilleure organisation visuelle",
                     ]
+                },
+                {
+                    title: "Et très prochainement...",
+                    items: [
+                        "Gestion du MIDI",
+                        "Mise en place du feedback pour les interfaces OSC et MIDI",
+                        "Gestion des DCA pour vous aider au mixage de vos spectacles musicaux",
+                        "..."
+                    ]
                 }
             ],
         },
@@ -205,6 +227,10 @@ export const ui = {
             description: "Téléchargez SnoringPony et commencez à programmer votre prochain spectacle dès aujourd'hui.",
             latestStableVersion: "Dernière version stable",
             latestBetaVersion: "Dernière version bêta",
+            devVersion: {
+                title: "Version développeur",
+                description: "Pour les aventuriers souhaitant tester les dernières fonctionnalités en cours de développement. Peut être instable et contenir des bugs !",
+            },
             betaWarning: {
                 title: "⚠ Attention ⚠",
                 message: "Cette version peut être instable<br> et contenir des bugs !",
