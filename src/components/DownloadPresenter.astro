@@ -27,14 +27,23 @@ const downloadUrl = {
     linux64: Config.github.getDownloadUrl(version, 'linux-x64', 'AppImage'),
 };
 
-const downloadLabel = {
+let downloadLabel = {
     win64: sprintf(t('downloads.modal.download'), version, 'Windows 64-bits'),
     macosSilicon: sprintf(t('downloads.modal.download'), version, 'MacOS Apple Silicon'),
     macosIntel: sprintf(t('downloads.modal.download'), version, 'MacOS Intel'),
     linux64: sprintf(t('downloads.modal.download'), version, 'Linux 64-bits'),
 };
+
+if (type == "dev") {
+    downloadLabel = {
+    win64: sprintf(t('downloads.modal.download'), "", 'Windows 64-bits'),
+    macosSilicon: sprintf(t('downloads.modal.download'), "", 'MacOS Apple Silicon'),
+    macosIntel: sprintf(t('downloads.modal.download'), "", 'MacOS Intel'),
+    linux64: sprintf(t('downloads.modal.download'), "", 'Linux 64-bits'),
+    };
+}
 ---
-{ version &&
+{ version && type != "dev" &&
 <div x-data="{openModal: false, url: '', label: ''}">
     <div class="container mx-auto">
         <div class="md:grid md:grid-cols-3 lg:grid-cols-4 lg:gap-1">
@@ -114,7 +123,84 @@ const downloadLabel = {
 </div>
 }
 
-{ !version &&
+{ !version && type == "dev" &&
+<div x-data="{openModal: false, url: '', label: ''}">
+    <div class="container mx-auto">
+        <div class="md:grid md:grid-cols-3 lg:grid-cols-4 lg:gap-1">
+            <div class="flex flex-col items-center justify-center bg-neutral-200/10 p-6 rounded-lg w-full col-span-4 rounded-b-none lg:col-span-1 lg:rounded-r-none lg:rounded-bl-lg">
+                <h2 class="font-bold text-2xl mt-4 text-center">{t('downloads.devVersion.title')}</h2>
+                {type == 'dev' && <div class="bg-red-800 text-sm text-center rounded-lg p-3 mt-4 w-full flex flex-col gap-1 animate-pulse">
+                    <div class="font-bold ">{t('downloads.betaWarning.title')}</div>
+                    <div><Fragment set:html={t('downloads.betaWarning.message')} /></div>
+                </div>}
+            </div>
+            <div class="flex flex-col items-center bg-neutral-500/10 p-6 rounded-tb-lg col-span-1 rounded-bl-lg lg:rounded-bl-none">
+                <WindowsLogo width={64} height={64} />
+                <h2 class="font-bold text-2xl mt-4">Windows</h2>
+                <div class="flex flex-col items-center mt-4 gap-4">
+                    <a href="#" @click.prevent="openModal = true; url = $event.currentTarget.dataset.url; label = $event.currentTarget.dataset.label;" data-url={downloadUrl.win64} data-label={downloadLabel.win64} class="btn">{t('downloads.downloadWin64')}</a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center bg-neutral-500/10 p-6 rounded-tb-lg col-span-1">
+                <MacLogo width={64} height={64} />
+                <h2 class="font-bold text-2xl mt-4">MacOS</h2>
+                <div class="flex flex-col items-center mt-4 gap-4">
+                    <a href="#" @click.prevent="openModal = true; url = $event.currentTarget.dataset.url; label = $event.currentTarget.dataset.label;" data-url={downloadUrl.macosSilicon} data-label={downloadLabel.macosSilicon} class="btn">{t('downloads.downloadMacSilicon')}</a>
+                    <a href="#" @click.prevent="openModal = true; url = $event.currentTarget.dataset.url; label = $event.currentTarget.dataset.label;" data-url={downloadUrl.macosIntel} data-label={downloadLabel.macosIntel} class="btn">{t('downloads.downloadMacIntel')}</a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center bg-neutral-500/10 p-6 rounded-r-lg col-span-1 rounded-tr-none lg:rounded-tr-lg">
+                <LinuxLogo width={64} height={64} />
+                <h2 class="font-bold text-2xl mt-4">Linux</h2>
+                <div class="flex flex-col items-center mt-4 gap-4">
+                    <a href="#" @click.prevent="openModal = true; url = $event.currentTarget.dataset.url; label = $event.currentTarget.dataset.label;" data-url={downloadUrl.linux64} data-label={downloadLabel.linux64} class="btn">{t('downloads.downloadLinux64')}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div x-show="openModal" x-cloak @click.prevent="openModal = false" class="fixed top-0 left-0 bottom-0 w-full h-dvh bg-neutral-950/70 backdrop-blur-sm flex justify-center items-center z-50 cursor-pointer" id="download-modal">
+        <div class="absolute p-4 top-0 right-0">
+            <Close width={30} height={30}  />
+        </div>
+        <div @click.stop="" class="w-full mx-4 md:w-3/4 bg-neutral-800 p-6 rounded-lg text-center shadow-xl cursor-default md:p-12">
+            <div class="flex items-center justify-center mb-6 gap-7">
+                <img src={Logo.src} alt="SnoringPony Logo" class="h-60 opacity-70 drop-shadow-xl drop-shadow-neutral-950/70 hidden md:block"/>
+                <div class="flex flex-col gap-10">
+                    <div class="flex flex-col gap-5">
+                        <p class="text-xl leading-8">{t('downloads.modal.text1')}</p>
+                        <p class="text-xl font-bold leading-8">{t('downloads.modal.text2')}</p>
+                    </div>
+                    <div class="flex justify-center gap-3">
+                        <a href="https://www.paypal.me/boerms" target="_blank" class="btn btn-secondary">
+                            <span class="inline-flex items-center gap-2">
+                                <PaypalLogo width={20} height={20} />
+                                <span>{t('downloads.modal.donatePaypal')}</span>
+                            </span>
+                        </a>
+                        <a href="https://patreon.com/boherm" target="_blank" class="btn btn-secondary">
+                            <span class="inline-flex items-center gap-2">
+                                <PatreonLogo width={20} height={20} />
+                                <span>{t('downloads.modal.donatePatreon')}</span>
+                            </span>
+                        </a>
+                        <a href="https://github.com/sponsors/boherm" target="_blank" class="btn btn-secondary">
+                            <span class="inline-flex items-center gap-2">
+                                <GithubLogo width={20} height={20} />
+                                <span>{t('downloads.modal.donateGithub')}</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <a x-bind:href="url" class="btn mt-2 btn-large" target="_blank" x-text="label"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+{ !version && type != "dev" &&
 <div class="container mx-auto">
     <div class="flex gap-1">
         <div class="flex flex-col items-center bg-neutral-500/10 p-6 rounded-lg w-full text-center">

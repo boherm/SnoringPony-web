@@ -8,6 +8,8 @@ const Config = {
             return `https://github.com/${this.owner}/${this.repo}`;
         },
         getDownloadUrl(version: string, platform: string, extension: string) {
+            if (!version)
+                return Config.devVersion.getDownloadUrl(platform, extension);
             return this.getUrl() + `/releases/download/${version}/${Config.projectName}-${platform}-${version}.${extension}`;
         },
         getChangeLogUrl(version: string) {
@@ -21,6 +23,12 @@ const Config = {
         getUrl() {
             return `https://discord.gg/7HNzrvuZUS`;
         },
+    },
+    devVersion: {
+        urlBase: 'https://snoringpony-dev.s3.fr-par.scw.cloud/',
+        getDownloadUrl(platform: string, extension: string) {
+            return this.urlBase + `SnoringPony-${platform}-dev.${extension}`;
+        }
     }
 };
 export default Config;
