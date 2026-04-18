@@ -79,15 +79,6 @@ export const ui = {
                         "Colorable Cuelist and Cues for better visual organization",
                         "MIDI management to control SnoringPony with physical controllers",
                     ]
-                },
-                {
-                    title: "And coming very soon...",
-                    items: [
-                        "MIDI support",
-                        "Feedback for OSC and MIDI interfaces",
-                        "DCA management to help you mix your musical shows",
-                        "..."
-                    ]
                 }
             ],
         },
@@ -230,15 +221,6 @@ export const ui = {
                         "Gestion des erreurs et des logs pour un dépannage simplifié",
                         "Cuelist et Cues colorables pour une meilleure organisation visuelle",
                         "Gestion du MIDI pour contrôler SnoringPony avec des contrôleurs physiques",
-                    ]
-                },
-                {
-                    title: "Et très prochainement...",
-                    items: [
-                        "Gestion du MIDI",
-                        "Mise en place du feedback pour les interfaces OSC et MIDI",
-                        "Gestion des DCA pour vous aider au mixage de vos spectacles musicaux",
-                        "..."
                     ]
                 }
             ],
