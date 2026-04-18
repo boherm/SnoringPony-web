@@ -53,6 +53,15 @@ export const ui = {
                     ]
                 },
                 {
+                    title: 'DCA Mixing',
+                    items: [
+                        "Automation of DCA to facilitate the mixing of your musical shows",
+                        "Management of the names of your DCA with the possibility to group several channels",
+                        "Management of effects via the use of the buses of your mixing console",
+                        "(Only for Behringer Wing for now... but other consoles could be supported in the future!)",
+                    ]
+                },
+                {
                     title: 'OSC',
                     items: [
                         "Incoming OSC messages to control SnoringPony remotely",
@@ -68,15 +77,7 @@ export const ui = {
                         "Fire cues in relation to other cues (before, after, at the same time)",
                         "Error and log management for simplified troubleshooting",
                         "Colorable Cuelist and Cues for better visual organization",
-                    ]
-                },
-                {
-                    title: "And coming very soon...",
-                    items: [
-                        "MIDI support",
-                        "Feedback for OSC and MIDI interfaces",
-                        "DCA management to help you mix your musical shows",
-                        "..."
+                        "MIDI management to control SnoringPony with physical controllers",
                     ]
                 }
             ],
@@ -87,7 +88,7 @@ export const ui = {
             latestStableVersion: "Latest stable version",
             latestBetaVersion: "Latest beta version",
             devVersion: {
-                title: "Developer version",
+                title: "Bleeding-edge version",
                 description: "For adventurers wishing to test the latest features under development. May be unstable and contain bugs!",
             },
             betaWarning: {
@@ -191,6 +192,16 @@ export const ui = {
                         'Utilisation de plusieurs interfaces audio et de sorties audio simultanément',
                         'Action pour lire plusieurs fichiers audio en même temps sur des sorties différentes',
                         'Action de playlist pour enchaîner plusieurs fichiers audio les uns après les autres',
+                        'Support des VST3 pour ajouter des effets à vos cues audio',
+                    ]
+                },
+                {
+                    title: 'DCA Mixing',
+                    items: [
+                        'Automatisation des DCA pour faciliter le mixage de vos spectacles musicaux',
+                        'Gestion des noms de vos DCA avec la possibilité de grouper plusieurs canaux',
+                        'Gestion des effets via l\'utilisation des bus de votre console de mixage',
+                        '(Uniquement pour les Behringer Wing pour l\'instant... mais d\'autres consoles pourraient être supportées à l\'avenir !)',
                     ]
                 },
                 {
@@ -209,15 +220,7 @@ export const ui = {
                         "Lancement d'actions par rapport à d'autres cues (avant, après, en même temps)",
                         "Gestion des erreurs et des logs pour un dépannage simplifié",
                         "Cuelist et Cues colorables pour une meilleure organisation visuelle",
-                    ]
-                },
-                {
-                    title: "Et très prochainement...",
-                    items: [
-                        "Gestion du MIDI",
-                        "Mise en place du feedback pour les interfaces OSC et MIDI",
-                        "Gestion des DCA pour vous aider au mixage de vos spectacles musicaux",
-                        "..."
+                        "Gestion du MIDI pour contrôler SnoringPony avec des contrôleurs physiques",
                     ]
                 }
             ],
@@ -228,7 +231,7 @@ export const ui = {
             latestStableVersion: "Dernière version stable",
             latestBetaVersion: "Dernière version bêta",
             devVersion: {
-                title: "Version développeur",
+                title: "Version bleeding-edge",
                 description: "Pour les aventuriers souhaitant tester les dernières fonctionnalités en cours de développement. Peut être instable et contenir des bugs !",
             },
             betaWarning: {
