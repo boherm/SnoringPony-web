@@ -27,7 +27,7 @@ const Config = {
     devVersion: {
         urlBase: 'https://snoringpony-dev.s3.fr-par.scw.cloud/',
         getDownloadUrl(platform: string, extension: string) {
-            return this.urlBase + `SnoringPony-${platform}-dev.${extension}`;
+            return this.urlBase + `SnoringPony-${platform}-bleedingedge.${extension}`;
         }
     }
 };
