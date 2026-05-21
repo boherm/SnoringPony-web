@@ -58,7 +58,7 @@ export const ui = {
                         "Automation of DCA to facilitate the mixing of your musical shows",
                         "Management of the names of your DCA with the possibility to group several channels",
                         "Management of effects via the use of the buses of your mixing console",
-                        "(Only for Behringer Wing for now... but other consoles could be supported in the future!)",
+                        "(For Behringer Wing and partially for A&H SQ mixer series for now... but other consoles could be supported in the future!)",
                     ]
                 },
                 {
@@ -78,6 +78,7 @@ export const ui = {
                         "Error and log management for simplified troubleshooting",
                         "Colorable Cuelist and Cues for better visual organization",
                         "MIDI management to control SnoringPony with physical controllers",
+                        "Websocket interface to control OBS scenes directly in Cues",
                     ]
                 }
             ],
@@ -201,7 +202,7 @@ export const ui = {
                         'Automatisation des DCA pour faciliter le mixage de vos spectacles musicaux',
                         'Gestion des noms de vos DCA avec la possibilité de grouper plusieurs canaux',
                         'Gestion des effets via l\'utilisation des bus de votre console de mixage',
-                        '(Uniquement pour les Behringer Wing pour l\'instant... mais d\'autres consoles pourraient être supportées à l\'avenir !)',
+                        '(Pour les Behringer Wing et partiellement pour A&H SQ series pour l\'instant... mais d\'autres consoles pourraient être supportées à l\'avenir !)',
                     ]
                 },
                 {
@@ -221,6 +222,7 @@ export const ui = {
                         "Gestion des erreurs et des logs pour un dépannage simplifié",
                         "Cuelist et Cues colorables pour une meilleure organisation visuelle",
                         "Gestion du MIDI pour contrôler SnoringPony avec des contrôleurs physiques",
+                        "Interface websocket pour contrôler les scènes OBS directement dans des Cues"
                     ]
                 }
             ],
