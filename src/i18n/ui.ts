@@ -118,7 +118,7 @@ export const ui = {
             docs: {
                 title: 'Official documentation',
                 description: "The complete guide to mastering SnoringPony.",
-                url: '#',
+                url: 'https://docs.snoringpony.app/en/',
                 label: 'Go to the documentation',
             },
             youtube: {
@@ -262,7 +262,7 @@ export const ui = {
             docs: {
                 title: 'Documentation officielle',
                 description: "Le guide complet pour maîtriser SnoringPony.",
-                url: '#',
+                url: 'https://docs.snoringpony.app/',
                 label: 'Aller à la documentation',
             },
             youtube: {
