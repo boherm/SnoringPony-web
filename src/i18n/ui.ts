@@ -39,8 +39,12 @@ export const ui = {
             description: 'Discover the main features of SnoringPony',
             sliders: [
                 { image: '/ui.png', description: "Main window of SnoringPony" },
+                { image: '/audio-metering.png', description: "Audio Metering system with spectogram, RTA, and dB SPL over time" },
                 { image: '/conductor.png', description: "Conductor window to display current and next cue." },
-                { image: '/osc-cue.png', description: "Example of the configuration for a OSC Cue" }
+                { image: '/osc-cue.png', description: "Example of the configuration for a OSC Cue" },
+                { image: '/rf-coordinator.png', description: "RF Coordinator to optimize frequencies of your RF devices" },
+                { image: '/show-timers.png', description: "Timers for your shows controlable with cues" },
+                { image: '/dca-mixing.png', description: "DCA Mixing to automate your DCA and facilitate the mixing of your musical shows" },
             ],
             blocks: [
                 {
@@ -50,6 +54,8 @@ export const ui = {
                         "Using multiple audio interfaces and simultaneous audio outputs",
                         "Cue to play multiple audio files at the same time on different outputs",
                         "Playlist cue to chain multiple audio files one after the other",
+                        "Support for VST3 to add effects to your audio cues",
+                        "MTC and MIDI timecode support to synchronize your cues with other devices",
                     ]
                 },
                 {
@@ -58,7 +64,7 @@ export const ui = {
                         "Automation of DCA to facilitate the mixing of your musical shows",
                         "Management of the names of your DCA with the possibility to group several channels",
                         "Management of effects via the use of the buses of your mixing console",
-                        "(For Behringer Wing and partially for A&H SQ mixer series for now... but other consoles could be supported in the future!)",
+                        "(For Behringer Wing and partially for A&H CQ mixer series for now... but other consoles could be supported in the future!)",
                     ]
                 },
                 {
@@ -70,18 +76,28 @@ export const ui = {
                     ]
                 },
                 {
-                    title: "And many more to discover!",
+                    title: 'RF Coordination',
                     items: [
-                        "User-friendly and intuitive interface",
-                        "Multi-platform support (Windows, MacOS, Linux)",
-                        "Fire cues in relation to other cues (before, after, at the same time)",
-                        "Error and log management for simplified troubleshooting",
-                        "Colorable Cuelist and Cues for better visual organization",
-                        "MIDI management to control SnoringPony with physical controllers",
-                        "Websocket interface to control OBS scenes directly in Cues",
+                        "Spectrum analyzer in real time (via RTL-SDR dongle)",
+                        "Declaration of allowed zones for frequency assignment",
+                        "Declaration of equipment and profiles",
+                        "Optimization of frequency placements with one click"
                     ]
-                }
+                },
             ],
+            more_info: {
+                title: "And many more to discover!",
+                items: [
+                    "User-friendly and intuitive interface",
+                    "Multi-platform support (Windows, MacOS, Linux)",
+                    "Show timers controllable by cues",
+                    "Fire cues in relation to other cues (before, after, at the same time)",
+                    "Error and log management for simplified troubleshooting",
+                    "Colorable Cuelist and Cues for better visual organization",
+                    "MIDI management to control SnoringPony with physical controllers",
+                    "Websocket interface to control OBS scenes directly in Cues",
+                ]
+            },
         },
         downloads: {
             title: "Saddle up!",
@@ -182,8 +198,12 @@ export const ui = {
             description: 'Découvrez les fonctionnalités principales de SnoringPony',
             sliders: [
                 { image: '/ui.png', description: "Interface de SnoringPony" },
+                { image: '/audio-metering.png', description: "" },
                 { image: '/conductor.png', description: "Fenêtre de conducteur permettant de visualiser l'action en cours ainsi que la prochaine à être jouée." },
-                { image: '/osc-cue.png', description: "Exemple de programmation d'une Cue de type OSC" }
+                { image: '/osc-cue.png', description: "Exemple de programmation d'une Cue de type OSC" },
+                { image: '/rf-coordinator.png', description: "Coordinateur HF pour optimiser les fréquences de vos équipements" },
+                { image: '/show-timers.png', description: "Timers vos spectacles contrôlables avec des cues" },
+                { image: '/dca-mixing.png', description: "Automatisation des DCA pour faciliter le mixage DCA pour vos spectacles musicaux" },
             ],
             blocks: [
                 {
@@ -194,6 +214,7 @@ export const ui = {
                         'Action pour lire plusieurs fichiers audio en même temps sur des sorties différentes',
                         'Action de playlist pour enchaîner plusieurs fichiers audio les uns après les autres',
                         'Support des VST3 pour ajouter des effets à vos cues audio',
+                        'Support du MTC et du MIDI timecode pour synchroniser vos cues avec d\'autres appareils',
                     ]
                 },
                 {
@@ -202,7 +223,7 @@ export const ui = {
                         'Automatisation des DCA pour faciliter le mixage de vos spectacles musicaux',
                         'Gestion des noms de vos DCA avec la possibilité de grouper plusieurs canaux',
                         'Gestion des effets via l\'utilisation des bus de votre console de mixage',
-                        '(Pour les Behringer Wing et partiellement pour A&H SQ series pour l\'instant... mais d\'autres consoles pourraient être supportées à l\'avenir !)',
+                        '(Pour les Behringer Wing et partiellement pour A&H CQ series pour l\'instant... mais d\'autres consoles pourraient être supportées à l\'avenir !)',
                     ]
                 },
                 {
@@ -214,18 +235,28 @@ export const ui = {
                     ]
                 },
                 {
-                    title: "Et d'autres à découvrir !",
+                    title: 'RF Coordination',
                     items: [
-                        "Interface intuitive et facile à utiliser",
-                        "Support multi-plateforme (Windows, MacOS, Linux)",
-                        "Lancement d'actions par rapport à d'autres cues (avant, après, en même temps)",
-                        "Gestion des erreurs et des logs pour un dépannage simplifié",
-                        "Cuelist et Cues colorables pour une meilleure organisation visuelle",
-                        "Gestion du MIDI pour contrôler SnoringPony avec des contrôleurs physiques",
-                        "Interface websocket pour contrôler les scènes OBS directement dans des Cues"
+                        "Spectogramme RF en temps réel (via dongle RTL-SDR)",
+                        "Déclaration de zones autorisées pour l'assignement de fréquences",
+                        "Déclaration des équipements et des profils",
+                        "Optimisation des placements des fréquences en 1 clic"
                     ]
-                }
+                },
             ],
+            more_info: {
+                title: "Et d'autres à découvrir !",
+                items: [
+                    "Interface intuitive et facile à utiliser",
+                    "Support multi-plateforme (Windows, MacOS, Linux)",
+                    "Timers de spectacle contrôlables par les cues",
+                    "Lancement d'actions par rapport à d'autres cues (avant, après, en même temps)",
+                    "Gestion des erreurs et des logs pour un dépannage simplifié",
+                    "Cuelist et Cues colorables pour une meilleure organisation visuelle",
+                    "Gestion du MIDI pour contrôler SnoringPony avec des contrôleurs physiques",
+                    "Interface websocket pour contrôler les scènes OBS directement dans des Cues"
+                ]
+            },
         },
         downloads: {
             title: "En selle !",
