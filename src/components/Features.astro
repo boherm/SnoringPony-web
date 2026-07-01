@@ -59,7 +59,7 @@ import ArrowRight from '@assets/arrow-right.svg';
 
                     <div class="absolute top-1/2 left-2 translate-y-[-50%]">
                         <button class="cursor-pointer text-lg md:text-2xl lg:text-5xl text-white"
-                            x-on:click="activeImage = activeImage === images.length ? 1 : activeImage + 1">
+                            x-on:click="activeImage = activeImage === 1 ? images.length : activeImage - 1">
                             <ArrowLeft width={20} height={20} class="drop-shadow-md drop-shadow-neutral-900" />
                         </button>
                     </div>
